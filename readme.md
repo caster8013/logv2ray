@@ -1,3 +1,24 @@
+### frontend
+
+entry:
+index.js
+
+
+### scripts
+
+check.js:
+input db.json, output the moment info which the ip amount above or equal 10.
+
+rewrite.js:
+db.json reconstruct scripts.
+
+
+### service
+
+npm run service
+
+> Log online IPs every 5 minutes. Query every ip by which telecom operator it belongs, write the telecom operator name to ipDB in db.json. write the moment info (moment, IPs, ip amount) to v2rayOnlineIP in db.json.
+
 1. install nodejs and npm
 
 ```
@@ -5,6 +26,9 @@ sudo apt-get update
 sudo apt-get install nodejs
 sudo apt-get install npm
 ```
+
+1.5 fix es6 compatible issue
+npm install --save-dev babel-preset-env babel-cli
 
 2. local storage
 

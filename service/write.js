@@ -1,4 +1,4 @@
-const request = require('request');
+const request = require('request')
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const moment = require('moment')
@@ -8,7 +8,6 @@ const db = low(adapter)
 
 db.defaults({
     v2rayOnlineIP: [],
-    v2rayOnlineIPCount: 0,
     ipDB: [],
     ipDBCount: 0
 }).write();
@@ -52,10 +51,10 @@ let ipDBToWrite = async (oneIP = "") => {
 exports.queue = (ipArray = []) => {
     onlineIPs(ipArray).then((group) => {
         let info = {};
-        info.timestamp = moment().unix().toString();
-        info.ips = group;
+        info.moment = moment().format("YYYY-M-D h:mm:ss A ddd");
+        info.ips = group.map((i) => Object.keys(i).toString());
+        info.ipAmount = info.ips.length;
 
         db.get('v2rayOnlineIP').push(info).write();
-        db.update('v2rayOnlineIPCount', n => n + 1).write();
     });
 };

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "service": "sudo forever start service.js"
   },
   "keywords": [],
   "author": "caster wang <warley8013@gmail.com>",
