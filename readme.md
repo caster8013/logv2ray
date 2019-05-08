@@ -13,7 +13,7 @@ rewrite.js:
 db.json reconstruct scripts.
 
 
-### service
+### lib
 
 npm run service
 
